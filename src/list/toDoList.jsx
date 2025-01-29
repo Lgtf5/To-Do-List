@@ -1,33 +1,58 @@
 import React, { useState } from "react";
 
 
-function List() {
-    const [foods, setFoods] = useState(["apple", "banana", "orange",]);
+function ToDoList() {
+    const [tasks, setTask] = useState(["buy food", "go run", "do exercise"]);
+    const [newTask, setNewTask] = useState ("");
+    
+    function handleInputChange (e){
+        setNewTask (e.target.value);
+    }
+    
+    function addTask() {
 
-    function handleAddFood() {
-
-        const newFood = document.getElementById("foodInput").value;
-        document.getElementById("foodInput").value = "";
-        setFoods(f => [...f, newFood]);
+        
     }
 
-    function handleRemoveFood(index) {
-        setFoods(f => f.filter((_, i) => i !== index));
+    function deleteTask(index) {
+        
     }
 
-    return (<div>
-                <h2>List of Food</h2>
-                <ul>
-                {foods.map((food, index) =>
-                    <li key={index} onClick={() => handleRemoveFood(index)}>
-                        {food}
-                    </li>)}
-                </ul>
-                <input type="text" id="foodInput" placeholder="Enter food name"/>
-                <button onClick={handleAddFood}>Add food</button>
-        </div>
+
+    function moveUp (index) {
+
+    }
+
+    function moveDown (index) {
+
+    }
+
+    return ( <div className="list" >
+                <h1>To Do List</h1>
+                <div>
+                    <input type="text" placeholder= "Enter a task" value= {newTask} onChange= {handleInputChange}/>
+                    <button
+                        className= "add-button" onClick={addTask}>Add
+                    </button>
+                </div>
+                <ol>
+                    {tasks.map((task, index) =>
+                    <li key= {index}>
+                        <span className= "text">{task}</span>
+                        <button className = "delete-button" onClick={() => deleteTask (index)}> Delete 
+                        </button>
+                        <button className = "up-button" onClick={() => moveUp (index)}> 🔼
+                        </button>
+                        <button className = "down-button" onClick={() => moveDown (index)}> 🔽
+                        </button>
+                    </li>
+                    
+                )}
+                </ol>
+                
+            </div>
     );
 }
 
 
-export default List
+export default ToDoList
