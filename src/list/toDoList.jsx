@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 function ToDoList() {
-    const [tasks, setTasks] = useState(["buy food", "go run", "do exercise"]);
+    const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState ("");
     
     function handleInputChange (e){
@@ -44,7 +44,7 @@ function ToDoList() {
 
     return ( <div className="list" >
                 <h1>To Do List</h1>
-                <div>
+                <div className="input-container" >
                     <input type="text" placeholder= "Enter a task" value= {newTask} onChange= {handleInputChange}/>
                     <button
                         className= "add-button" onClick={addTask}> Add

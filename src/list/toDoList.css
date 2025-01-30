@@ -1,8 +1,21 @@
+body {
+    background-color:  rgb(229, 230, 230);;
+}
+
+
 .list {
-    margin-top: 100px;
+    margin:0px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(229, 230, 230);
+    
+    padding: 90px;
+    min-width: 20px;
+    min-height: auto;
+
+}
+h1 {
+    margin-left: -50px;
+    font-size: 42px;
 }
 
 input[type="text"] {
@@ -11,6 +24,14 @@ input[type="text"] {
     border: 2px solid rgb(28, 28, 27) ;
     border-radius: 4px;
     color: rgb(132, 121, 121);
+    text-align: center;
+    width: auto;
+    min-width: 320px;
+    
+}
+
+input {
+    width: 340px;   
 }
 
 ol {
@@ -26,6 +47,8 @@ li {
     display: flex;
     align-items: center;
     background-color: rgb(251, 247, 243);
+    width:  auto;
+    min-width: 320px;
 }
 
 .text {
@@ -37,6 +60,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 1 ease; 
+    min-inline-size:20px ;
 }
 
 .up-button , .down-button {
