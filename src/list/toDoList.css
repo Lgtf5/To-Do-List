@@ -1,4 +1,97 @@
-body {
-    font-family: 'Courier New', Courier, monospace;
-    color: black;
+.list {
+    margin-top: 100px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(229, 230, 230);
+}
+
+input[type="text"] {
+    font-size: 14px;
+    padding: 10px;
+    border: 2px solid rgb(28, 28, 27) ;
+    border-radius: 4px;
+    color: rgb(132, 121, 121);
+}
+
+ol {
+    padding: 0;
+    font-size: 16px;
+}
+
+li {
+    padding: 10px;
+    margin: 4px;
+    border: 2px solid rgba(197, 186, 186, 0.899);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(251, 247, 243);
+}
+
+.text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
+button {
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 1 ease; 
+}
+
+.up-button , .down-button {
+    font-size: 22px;
+    border-radius: 12px;
+    border:2px solid rgb(21, 119, 60);
+    padding: 5px 10px; 
+    background-color: seagreen;
+    color: rgb(141, 184, 128);
+    margin: 4px;
+    
+}
+
+.up-button:hover ,
+.down-button:hover {
+    background-color: rgb(88, 200, 101);
+    color:rgb(226, 249, 16);
+    
+    border-style:outset;
+}
+.up-button:active ,
+.down-button:active {
+    color:white;
+    color:rgb(226, 249, 16);
+    border: green;
+}
+.delete-button {
+    font-weight: bold;
+    padding: 8px 20px; 
+    margin: 6px;
+    border:2px solid rgb(166, 17, 12);
+    border-radius: 8px;
+    background-color: rgb(188, 14, 14);
+    color:aliceblue;
+    font-weight: 400;
+    
+}
+.delete-button:hover {color: white}
+.delete-button:active {
+    border:rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
+}
+.add-button {
+    color:rgb(116, 116, 95);
+    background-color: rgb(198, 214, 143); 
+    border: 2px solid rgb(121, 121, 100);
+    border-style:outset;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 12px;
+    font-weight: 500;
+}
+
+.add-button:active {
+    color: aliceblue;
+    background-color: rgb(193, 201, 153);
+    border:rgb(94, 137, 25); 
 }

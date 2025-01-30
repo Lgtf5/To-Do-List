@@ -1,5 +1,5 @@
 
-import List from './list/toDoList'
+import ToDoList from './list/toDoList'
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     
-    <List />
+    <ToDoList />
     
   )
 }

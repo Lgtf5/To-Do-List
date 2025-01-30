@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 function ToDoList() {
-    const [tasks, setTask] = useState(["buy food", "go run", "do exercise"]);
+    const [tasks, setTasks] = useState(["buy food", "go run", "do exercise"]);
     const [newTask, setNewTask] = useState ("");
     
     function handleInputChange (e){
@@ -11,20 +11,35 @@ function ToDoList() {
     
     function addTask() {
 
-        
+        if (newTask.trim() !==""){
+        setTasks([...tasks, newTask]);
+        setNewTask("");
+        }
     }
 
     function deleteTask(index) {
         
+        const updateTasks = tasks.filter ((_, i) => i !== index) 
+        setTasks (updateTasks);
     }
 
 
     function moveUp (index) {
-
+        if (index > 0) {
+            const updateTasks = [...tasks];
+            [updateTasks[index], updateTasks[index - 1]] = [updateTasks[index - 1], updateTasks[index]];
+            setTasks(updateTasks);
+        }
     }
 
-    function moveDown (index) {
+    function moveDown (index) { 
+        console.log (index)
+        if (index < tasks.length - 1) {
+            const updateTasks = [...tasks]; 
+            [updateTasks[index], updateTasks[index + 1]] = [updateTasks[index + 1], updateTasks[index]];
+            setTasks(updateTasks);
 
+        }
     }
 
     return ( <div className="list" >
@@ -32,18 +47,18 @@ function ToDoList() {
                 <div>
                     <input type="text" placeholder= "Enter a task" value= {newTask} onChange= {handleInputChange}/>
                     <button
-                        className= "add-button" onClick={addTask}>Add
+                        className= "add-button" onClick={addTask}> Add
                     </button>
                 </div>
                 <ol>
-                    {tasks.map((task, index) =>
+                    {tasks.map((tasks, index) =>
                     <li key= {index}>
-                        <span className= "text">{task}</span>
+                        <span className= "text">{tasks}</span>
                         <button className = "delete-button" onClick={() => deleteTask (index)}> Delete 
                         </button>
-                        <button className = "up-button" onClick={() => moveUp (index)}> 🔼
+                        <button className = "up-button" onClick={() => moveUp (index)}> △
                         </button>
-                        <button className = "down-button" onClick={() => moveDown (index)}> 🔽
+                        <button className = "down-button" onClick={() => moveDown (index)}> ▽
                         </button>
                     </li>
                     
